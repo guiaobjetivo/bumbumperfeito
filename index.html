@@ -44,26 +44,33 @@ Resultados visíveis em apenas 4 semanas!" property="twitter:description" data-n
 
 
 <script>
-// Função para interceptar cliques
-function interceptClick(event) {
-    event.preventDefault(); // Previne o comportamento padrão (navegação ou ação)
-    event.stopPropagation(); // Impede a propagação do evento
-    console.log('Clique interceptado! Redirecionando para Kiwify...'); // Mensagem de log para depuração
 
-    // Redireciona para o link da Kiwify
-    window.location.href = 'https://seguro.brandaoternosecia.com/r/KQOHN9HVGX';
-	//'https://seguro.brandaoternosecia.com/r/KQOHN9HVGX';
-}
+//setTimeout( function(){
 
-// Seleciona todos os elementos <a> (links) e <button> (botões)
-const allButtonsAndLinks = document.querySelectorAll('a, button');
+	document.addEventListener('DOMContentLoaded', setTimeout( function() {
+		// Função para interceptar cliques
+		function interceptClick(event) {
+			event.preventDefault(); // Previne o comportamento padrão (navegação ou ação)
+			event.stopPropagation(); // Impede a propagação do evento
+			//alert('Clique interceptado! Redirecionando para Kiwify...');
 
-// Aplica o interceptador de cliques a cada elemento
-allButtonsAndLinks.forEach(element => {
-    element.addEventListener('click', interceptClick);
-});
+			// LINK DESTINO que vai ser aberto ao clicar em qualquer <a> ou <button>
+			window.location.href = 'https://seguro.brandaoternosecia.com/r/KQOHN9HVGX';
+		}
 
-console.log('Cliques em todos os botões e links foram desativados. Redirecionando para o site destino...');
+		// Seleciona todos os elementos <a> (links) e <button> (botões)
+		const allButtonsAndLinks = document.querySelectorAll('a');
+
+		// Aplica o interceptador de cliques a cada elemento
+		
+			allButtonsAndLinks.forEach(element => {
+				element.addEventListener('click', interceptClick);
+				element.href = 'https://seguro.brandaoternosecia.com/r/KQOHN9HVGX';
+				//alert('elemento modificado...'+element.innerText);
+			});		
+
+		//alert('Cliques em todos os botões e links foram desativados. Redirecionando para o site destino...');
+	} , 2000) );
+//}, 2000);
+	
 </script>
-
-
